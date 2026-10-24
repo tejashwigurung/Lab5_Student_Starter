@@ -12,7 +12,19 @@ public class Main {
         System.out.println("Dealer total: " + dealer.getHandTotal());
         // TODO: Let the dealer play. Print "Dealer hits..." before each additional card.
         // TODO: Print the updated hand and total after every hit.
+        while (dealer.getHandTotal() < 17) {
+            if (deck.getSize() == 0) {
+                break;
+            }
+            System.out.println("Dealer hits...");
+            Card dealtCard = deck.dealCard();
+            dealer.receiveCard(dealtCard);
+
+            System.out.println("Dealer's hand: " + dealer.getHand());
+            System.out.println("Dealer total: " + dealer.getHandTotal());
+        }
+
         // TODO: Print "Dealer stands." after the dealer reaches 17 or higher.
-        dealer.playTurn(deck);
+        System.out.println("Dealer stands.");
     }
 }
